@@ -124,7 +124,8 @@ const SEED_PROVIDERS = [
   },
 ];
 
-const AREAS = ['All areas', 'Johannesburg', 'Pretoria', 'Ekurhuleni'];// ---------- Helpers ----------
+const AREAS = ['All areas', 'Johannesburg', 'Pretoria', 'Ekurhuleni'];
+// ---------- Helpers ----------
 function initials(name) {
   return name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
 }
@@ -319,7 +320,11 @@ function ProviderCard({ provider, onOpenBooking }) {
         fontFamily: 'Work Sans, sans-serif', fontSize: 11, color: `${C.soil}66`,
         marginTop: 7, textAlign: 'center',
       }}>
-        Contact details are shared once your booking is confirmed// ---------- Booking Modal ----------
+        Contact details are shared once your booking is confirmed
+      </div>
+    </div>
+  );
+}// ---------- Booking Modal ----------
 function BookingModal({ provider, onClose, onSubmit }) {
   const [form, setForm] = useState({ name: '', phone: '', date: '', notes: '' });
   const [submitting, setSubmitting] = useState(false);
@@ -547,9 +552,7 @@ function SignupModal({ onClose, onSubmit }) {
       </div>
     </div>
   );
-        }
-      </div>
-    </div>// ---------- Provider Inbox ----------
+}// ---------- Provider Inbox ----------
 function ProviderInbox({ providers, onRespond }) {
   const [selectedProviderId, setSelectedProviderId] = useState(providers[0]?.id || '');
   const [myBookings, setMyBookings] = useState([]);
@@ -707,7 +710,9 @@ function Toast({ message, onDone }) {
       textAlign: 'center',
     }}>
       {message}
-    </div>// ---------- Main App ----------
+    </div>
+  );
+}// ---------- Main App ----------
 export default function MaidEasy() {
   const [providers, setProviders] = useState(SEED_PROVIDERS);
   const [loaded, setLoaded] = useState(false);
@@ -962,8 +967,4 @@ export default function MaidEasy() {
       {toast && <Toast message={toast} onDone={() => setToast(null)} />}
     </div>
   );
-}
-  );
-}
-  );
-}
+                }
